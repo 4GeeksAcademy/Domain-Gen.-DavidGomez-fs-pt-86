@@ -4,15 +4,18 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 window.onload = function() {
-  const pronounList = ["the", "our"];
-  const adjectiveList = ["great", "big"];
-  const nounsList = ["jogger", "racoon"];
+  const pronounList = ["The", "Our", "Yours", "This", "That"];
+  const adjectiveList = ["Great", "Gig", "Small", "Tiny", "Green", "Special"];
+  const nounsList = ["Jogger", "Racoon", "Machine", "Person", "Product"];
+  const endList = [".es", ".com", ".io", ".net", ".urs"];
   const domains = [];
 
   pronounList.forEach(pronoun => {
     adjectiveList.forEach(adjective => {
       nounsList.forEach(noun => {
-        domains.push(`${pronoun}${adjective}${noun}.com`);
+        endList.forEach(end => {
+          domains.push(`${pronoun}${adjective}${noun}${end}`);
+        });
       });
     });
   });
